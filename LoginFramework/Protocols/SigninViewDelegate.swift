@@ -8,6 +8,8 @@
 import Foundation
 
 protocol SigninViewDelegate: AnyObject {
-    func successfullSignin()
+    func successfulSignin(data: SigninResponseModel)
     func errorSignin(error: SigninError)
+    func errorUsernameIsEmpty()
+    func errorPasswordIsEmpty()
 }
