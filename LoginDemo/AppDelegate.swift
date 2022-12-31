@@ -16,9 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let simpleLayout = SimpleLayout()
+        simpleLayout.primaryColor = UIColor.blue.withAlphaComponent(0.8)
+        simpleLayout.bgColor = UIColor(red: 227/255.0, green: 171/255.0, blue: 180/255.0, alpha: 1.0)
         let signinViewController = SigninViewController()
+        signinViewController.layout = .Simple(layout: simpleLayout)
+        
         window?.rootViewController = signinViewController
         window?.makeKeyAndVisible()
+        
         return true
     }
 

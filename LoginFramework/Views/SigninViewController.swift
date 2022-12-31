@@ -8,22 +8,23 @@
 import UIKit
 
 extension UITextField {
-    func setColorPlaceholder() {
-        let placeholderUsername = NSAttributedString(string: self.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+    func setColorPlaceholder(color: UIColor) {
+        let placeholderUsername = NSAttributedString(string: self.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor: color])
         self.attributedPlaceholder = placeholderUsername
     }
     
-    func setColorClearButton() {
+    func setColorClearButton(color: UIColor) {
         if let clearButton = self.value(forKey: "_clearButton") as? UIButton {
             let templateImage = clearButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
             clearButton.setImage(templateImage, for: .normal)
-            clearButton.tintColor = .darkGray
+            clearButton.tintColor = color
         }
     }
 }
 
 public class SigninViewController: UIViewController {
 
+    @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var lblTextSignin: UILabel!
     @IBOutlet weak var tfUsername: UITextField!
@@ -36,6 +37,7 @@ public class SigninViewController: UIViewController {
     @IBOutlet weak var heightLogo: NSLayoutConstraint!
 
     private var signinPresenter: SigninPresenterProtocol?
+    public var layout:Layout?
     
     public convenience init() {
         self.init(nibName: "SigninViewController", bundle: Bundle(for: SigninViewController.self))
@@ -43,8 +45,9 @@ public class SigninViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         updateUI()
+        applyLayout()
         observeKeyboard()
         initService()
     }
@@ -70,11 +73,13 @@ public class SigninViewController: UIViewController {
     }
     
     private func updateUI() {
-        tfUsername.setColorPlaceholder()
-        tfPassword.setColorPlaceholder()
+        let colorPlaceholder = UIColor.gray
+        tfUsername.setColorPlaceholder(color: colorPlaceholder)
+        tfPassword.setColorPlaceholder(color: colorPlaceholder)
         
-        tfUsername.setColorClearButton()
-        tfPassword.setColorClearButton()
+        let clearBtnColor = UIColor(red: 56/255.0, green: 112/255.0, blue: 58/255.0, alpha: 1.0)
+        tfUsername.setColorClearButton(color: clearBtnColor)
+        tfPassword.setColorClearButton(color: clearBtnColor)
         
         btnSignin.layer.cornerRadius = btnSignin.frame.height / 2
         scaleUISupportAllDevices()

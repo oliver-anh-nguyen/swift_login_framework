@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SigninViewController" customModule="LoginFramework" customModuleProvider="target">
             <connections>
+                <outlet property="bgImage" destination="Oap-cc-mgQ" id="Fjo-v5-g0k"/>
                 <outlet property="btnSignin" destination="IW3-1a-HsT" id="4mZ-EB-cbV"/>
                 <outlet property="heightLogo" destination="BTf-YB-oFn" id="Zoo-cT-l3C"/>
                 <outlet property="imgIconPassword" destination="Jb2-dG-0pv" id="NXd-2d-GVj"/>
@@ -27,6 +28,10 @@
             <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oap-cc-mgQ">
+                    <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="83j-WE-cqz">
                     <rect key="frame" x="114" y="183" width="200" height="200"/>
                     <constraints>
@@ -40,7 +45,7 @@
                         <constraint firstAttribute="height" constant="35" id="isJ-R7-USe"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
-                    <color key="textColor" red="0.2196818888" green="0.4384059012" blue="0.22741159799999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="textColor" red="0.2196078431372549" green="0.4392156862745098" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46g-Lq-pZM">
@@ -147,24 +152,28 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="wbt-b3-kfJ"/>
-            <color key="backgroundColor" red="0.80386970735997987" green="0.98152792574179293" blue="0.93383547062700312" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" red="0.68633705377578735" green="0.92767870426177979" blue="0.6690441370010376" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="46g-Lq-pZM" firstAttribute="leading" secondItem="wbt-b3-kfJ" secondAttribute="leading" constant="20" id="7tL-Zw-0Pf"/>
+                <constraint firstItem="Oap-cc-mgQ" firstAttribute="leading" secondItem="wbt-b3-kfJ" secondAttribute="leading" id="BNh-Rg-Zsn"/>
                 <constraint firstItem="83j-WE-cqz" firstAttribute="centerY" secondItem="bfz-St-nLR" secondAttribute="centerY" constant="-180" id="BVm-31-kqz"/>
                 <constraint firstItem="DGU-D0-QMa" firstAttribute="leading" secondItem="wbt-b3-kfJ" secondAttribute="leading" constant="20" id="FzO-xV-r4w"/>
                 <constraint firstItem="IW3-1a-HsT" firstAttribute="top" secondItem="Cd9-MB-IU6" secondAttribute="bottom" constant="50" id="Ipm-h3-7ag"/>
                 <constraint firstItem="83j-WE-cqz" firstAttribute="centerX" secondItem="bfz-St-nLR" secondAttribute="centerX" id="KZd-Pz-8yI"/>
                 <constraint firstItem="wbt-b3-kfJ" firstAttribute="trailing" secondItem="46g-Lq-pZM" secondAttribute="trailing" constant="20" id="VwD-Xc-3hO"/>
                 <constraint firstItem="46g-Lq-pZM" firstAttribute="top" secondItem="DGU-D0-QMa" secondAttribute="bottom" constant="50" id="WQI-R4-vZi"/>
+                <constraint firstItem="Oap-cc-mgQ" firstAttribute="top" secondItem="bfz-St-nLR" secondAttribute="top" id="cpj-nJ-lPH"/>
                 <constraint firstAttribute="trailing" secondItem="Cd9-MB-IU6" secondAttribute="trailing" constant="20" id="hjZ-rC-cDC"/>
                 <constraint firstItem="wbt-b3-kfJ" firstAttribute="trailing" secondItem="IW3-1a-HsT" secondAttribute="trailing" constant="20" id="k9n-0M-Nik"/>
                 <constraint firstItem="IW3-1a-HsT" firstAttribute="leading" secondItem="wbt-b3-kfJ" secondAttribute="leading" constant="20" id="oiL-OW-LDl"/>
+                <constraint firstItem="wbt-b3-kfJ" firstAttribute="trailing" secondItem="Oap-cc-mgQ" secondAttribute="trailing" id="p3v-Cd-p6Z"/>
                 <constraint firstItem="wbt-b3-kfJ" firstAttribute="bottom" secondItem="IW3-1a-HsT" secondAttribute="bottom" constant="70" id="pSx-wC-GFH"/>
                 <constraint firstItem="Cd9-MB-IU6" firstAttribute="top" secondItem="46g-Lq-pZM" secondAttribute="bottom" constant="10" id="snw-cP-JTW"/>
                 <constraint firstItem="wbt-b3-kfJ" firstAttribute="trailing" secondItem="DGU-D0-QMa" secondAttribute="trailing" constant="20" id="vCy-Be-1d7"/>
+                <constraint firstAttribute="bottom" secondItem="Oap-cc-mgQ" secondAttribute="bottom" id="x5Q-Bq-J7K"/>
                 <constraint firstItem="Cd9-MB-IU6" firstAttribute="leading" secondItem="wbt-b3-kfJ" secondAttribute="leading" constant="20" id="yOA-Xv-GEb"/>
             </constraints>
-            <point key="canvasLocation" x="105.79710144927537" y="69.642857142857139"/>
+            <point key="canvasLocation" x="105.14018691588784" y="69.330453563714912"/>
         </view>
     </objects>
     <resources>
