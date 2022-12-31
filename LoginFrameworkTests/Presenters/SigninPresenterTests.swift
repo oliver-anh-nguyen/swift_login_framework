@@ -108,4 +108,16 @@ class SigninPresenterTests: XCTestCase {
         // Then
         XCTAssertTrue(mockSigninViewDelegate.isPasswordEmpty)
     }
+    
+    func testSigninPresenter_WhenEmailInvalid_ShouldCallErrorEmailInvalidOnDelegate() {
+        // Given
+        mockSigninModelValidator.isEmailFormatInValid = true
+        
+        // When
+        sut.processUserSignin(formModel: signinFormModel)
+
+        // Then
+        XCTAssertTrue(mockSigninViewDelegate.isEmailInvalid)
+    }
+    
 }

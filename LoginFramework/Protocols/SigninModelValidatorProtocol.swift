@@ -8,6 +8,7 @@
 import Foundation
 
 protocol SigninModelValidatorProtocol {
-      func isUserNameValid(username: String) -> Bool
-      func isPasswordValid(password: String) -> Bool
+    func isUserNameValid(username: String) -> Bool
+    func isPasswordValid(password: String) -> Bool
+    func isValidEmailFormat(email: String) -> Bool
 }

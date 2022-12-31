@@ -28,6 +28,11 @@ final class SigninPresenter: SigninPresenterProtocol {
             return
         }
         
+        if !modelValidator.isValidEmailFormat(email: formModel.username) {
+            self.delegate?.errorFormatEmail()
+            return
+        }
+        
         if !modelValidator.isPasswordValid(password: formModel.password) {
             self.delegate?.errorPasswordIsEmpty()
             return

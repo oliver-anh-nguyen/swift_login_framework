@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 
 class MockSigninViewDelegate: SigninViewDelegate {
-    
+   
     var expectation: XCTestExpectation?
     
     var successfulSigninCounter = 0
@@ -21,6 +21,7 @@ class MockSigninViewDelegate: SigninViewDelegate {
     
     var isUsernameEmpty = false
     var isPasswordEmpty = false
+    var isEmailInvalid = false
     
     
     func successfulSignin(data: SigninResponseModel) {
@@ -33,6 +34,10 @@ class MockSigninViewDelegate: SigninViewDelegate {
         signinError = error
         errorHandlerCounter += 1
         expectation?.fulfill()
+    }
+    
+    func errorFormatEmail() {
+        isEmailInvalid = true
     }
     
     func errorUsernameIsEmpty() {

@@ -12,4 +12,5 @@ protocol SigninViewDelegate: AnyObject {
     func errorSignin(error: SigninError)
     func errorUsernameIsEmpty()
     func errorPasswordIsEmpty()
+    func errorFormatEmail()
 }

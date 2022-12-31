@@ -12,9 +12,11 @@ class MockSigninModelValidator: SigninModelValidatorProtocol {
     
     var isUsernameValidated: Bool = false
     var isPasswordValidated: Bool = false
+    var isEmailFormatValidated: Bool = false
     
     var isPasswordWasEmpty: Bool = false
     var isUsernameWasEmpty: Bool = false
+    var isEmailFormatInValid: Bool = false
     
     func isUserNameValid(username: String) -> Bool {
         isUsernameValidated = !isUsernameWasEmpty
@@ -24,6 +26,11 @@ class MockSigninModelValidator: SigninModelValidatorProtocol {
     func isPasswordValid(password: String) -> Bool {
         isPasswordValidated = !isPasswordWasEmpty
         return isPasswordValidated
+    }
+    
+    func isValidEmailFormat(email: String) -> Bool {
+        isEmailFormatValidated = !isEmailFormatInValid
+        return isEmailFormatValidated
     }
     
 }

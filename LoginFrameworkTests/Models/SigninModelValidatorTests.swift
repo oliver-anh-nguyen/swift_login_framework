@@ -61,4 +61,17 @@ class SigninModelValidatorTests: XCTestCase {
         // Then
         XCTAssertFalse(isPasswordValid, "The isPasswordValid() should have returned FALSE for a  password is empty but it has returned TRUE")
     }
+    
+    // MARK: Email Address Validation
+    func testSigninModelValidator_WhenValidEmailProvided_ShouldReturnTrue() {
+        let isValidEmailFormat = sut.isValidEmailFormat(email: "test@test.com")
+        
+        XCTAssertTrue(isValidEmailFormat, "Provided valid email address format but validation did not pass")
+    }
+    
+    func testSigninModelValidator_WhenInValidEmailProvided_ShouldReturnFalse() {
+        let isValidEmailFormat = sut.isValidEmailFormat(email: "test@test")
+        
+        XCTAssertFalse(isValidEmailFormat, "Provided invalid email address format but validation still passed")
+    }
 }
