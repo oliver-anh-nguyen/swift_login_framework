@@ -16,8 +16,10 @@ enum SigninError: LocalizedError, Equatable {
         switch self {
         case .failedRequest(let description):
             return description
-        case .invalidResponseModel, .invalidRequestURLString:
-            return ""
+        case .invalidResponseModel:
+            return "Invalid Response"
+        case .invalidRequestURLString:
+            return "Invalid Request URL String"
         }
     }
 }

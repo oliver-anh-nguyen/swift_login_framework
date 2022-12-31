@@ -42,12 +42,16 @@ final class SigninPresenter: SigninPresenterProtocol {
         
         webService.signin(withForm: requestModel) { [weak self] (responseModel, error) in
             if let error = error {
-                self?.delegate?.errorSignin(error: error)
+                DispatchQueue.main.async {
+                    self?.delegate?.errorSignin(error: error)
+                }
                 return
             }
             
             if let model = responseModel {
-                self?.delegate?.successfulSignin(data: model)
+                DispatchQueue.main.async {
+                    self?.delegate?.successfulSignin(data: model)
+                }
             }
         }
     }

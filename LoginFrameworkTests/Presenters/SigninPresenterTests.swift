@@ -83,7 +83,7 @@ class SigninPresenterTests: XCTestCase {
 
         // Then
         XCTAssertEqual(mockSigninViewDelegate.successfulSigninCounter, 0)
-        XCTAssertEqual(mockSigninViewDelegate.errorHandlerCounter, 1)
+        XCTAssertEqual(mockSigninViewDelegate.errorHandlerCounter, 1, "The errorHandlerCounter() method was called more than one time")
         XCTAssertNotNil(mockSigninViewDelegate.signinError)
     }
     
@@ -95,7 +95,7 @@ class SigninPresenterTests: XCTestCase {
         sut.processUserSignin(formModel: signinFormModel)
 
         // Then
-        XCTAssertTrue(mockSigninViewDelegate.isUsernameEmpty)
+        XCTAssertTrue(mockSigninViewDelegate.isUsernameEmpty, "Username was empty should return TRUE")
     }
     
     func testSigninPresenter_WhenPasswordWasEmpty_ShouldCallErrorPasswordEmptyOnDelegate() {
@@ -106,7 +106,7 @@ class SigninPresenterTests: XCTestCase {
         sut.processUserSignin(formModel: signinFormModel)
 
         // Then
-        XCTAssertTrue(mockSigninViewDelegate.isPasswordEmpty)
+        XCTAssertTrue(mockSigninViewDelegate.isPasswordEmpty, "Password was empty should return TRUE")
     }
     
     func testSigninPresenter_WhenEmailInvalid_ShouldCallErrorEmailInvalidOnDelegate() {
@@ -117,7 +117,7 @@ class SigninPresenterTests: XCTestCase {
         sut.processUserSignin(formModel: signinFormModel)
 
         // Then
-        XCTAssertTrue(mockSigninViewDelegate.isEmailInvalid)
+        XCTAssertTrue(mockSigninViewDelegate.isEmailInvalid, "Invalid email format should return TRUE")
     }
     
 }

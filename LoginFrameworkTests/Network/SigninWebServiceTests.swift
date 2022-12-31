@@ -60,7 +60,7 @@ class SigninWebServiceTests: XCTestCase {
             // Then
             XCTAssertNil(signinResponseModel, "The response model for a request containing unknown JSON response, should have been nil")
             XCTAssertEqual(error, SigninError.invalidResponseModel, "The signin() method did not return expected error")
-            XCTAssertEqual(error?.localizedDescription, "")
+            XCTAssertEqual(error?.localizedDescription, "Invalid Response")
             expectation.fulfill()
         }
 
@@ -79,7 +79,7 @@ class SigninWebServiceTests: XCTestCase {
             // Then
             XCTAssertEqual(error, SigninError.invalidRequestURLString, "The signin() method did not return an expected error for an invalidRequestURLString error")
             XCTAssertNil(signinResponseModel, "When an invalidRequestURLString takes place, the response model must be nil")
-            XCTAssertEqual(error?.localizedDescription, "")
+            XCTAssertEqual(error?.localizedDescription, "Invalid Request URL String")
             expectation.fulfill()
         }
 
