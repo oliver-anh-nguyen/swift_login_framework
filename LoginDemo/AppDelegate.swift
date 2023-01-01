@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let signinViewController = SigninViewController()
         //signinViewController.layout = .Simple(layout: simpleLayout)
-        signinViewController.layout = .Advanced(layout: advancedLayout)
+        //signinViewController.layout = .Advanced(layout: advancedLayout)
         
         window?.rootViewController = signinViewController
         window?.makeKeyAndVisible()
