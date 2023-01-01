@@ -72,3 +72,13 @@ advancedLayout.textSignin.font = UIFont.systemFont(ofSize: 17)
 let signinViewController = SigninViewController()
 signinViewController.layout = .Advanced(layout: advancedLayout)
 ```
+
+## Screenshots
+- Layout Signin <br />
+
+Default UI             |  Customize Simple Layout   |  Layout Input
+:-------------------------:|:-------------------------:|:-------------------------:
+<img src="Screenshots/sc2.png" width="300" height="500"/> | <img src="Screenshots/sc3.png" width="300" height="500"/> | <img src="Screenshots/sc4.png" width="300" height="500"/>
+
+- Unit testing Model, Presenter & Service <br />
+<img src="Screenshots/sc1.png"/>
