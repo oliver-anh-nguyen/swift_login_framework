@@ -6,6 +6,18 @@ Create a reusable log in framework:
 - Login details can be stubbed.
 - UI should be customizable.
 
+## Features
+- Programming language: Swift 
+- Design app's architecture: MVP Pattern
+- Protocol-Oriented Programming
+- Unit test: Test-Driven Development
+- Customize UI: SimpleLayout & AdvancedLayout
+- Support layout for all devices iPhone & iPad
+- Network: URLSession, easy to replace with other third-party
+- Observe Keyboard when user input
+- Validator data input
+- Error handling
+
 ## Installation
 
 To compile/run/test the LoginFramework:
