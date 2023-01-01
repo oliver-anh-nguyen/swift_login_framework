@@ -35,7 +35,8 @@ public class SigninViewController: UIViewController {
     @IBOutlet weak var imgIconUsername : UIImageView!
     @IBOutlet weak var imgIconPassword : UIImageView!
     @IBOutlet weak var heightLogo: NSLayoutConstraint!
-
+    @IBOutlet weak var btnForgotPassword: UIButton!
+    
     private var signinPresenter: SigninPresenterProtocol?
     public var layout:Layout?
     
@@ -73,15 +74,15 @@ public class SigninViewController: UIViewController {
     }
     
     private func updateUI() {
-        let colorPlaceholder = UIColor.gray
-        tfUsername.setColorPlaceholder(color: colorPlaceholder)
-        tfPassword.setColorPlaceholder(color: colorPlaceholder)
+        let primaryColor = UIColor(red: 56/255.0, green: 112/255.0, blue: 58/255.0, alpha: 1.0)
+        tfUsername.setColorPlaceholder(color: primaryColor.withAlphaComponent(0.5))
+        tfPassword.setColorPlaceholder(color: primaryColor.withAlphaComponent(0.5))
         
-        let clearBtnColor = UIColor(red: 56/255.0, green: 112/255.0, blue: 58/255.0, alpha: 1.0)
-        tfUsername.setColorClearButton(color: clearBtnColor)
-        tfPassword.setColorClearButton(color: clearBtnColor)
+        tfUsername.setColorClearButton(color: primaryColor)
+        tfPassword.setColorClearButton(color: primaryColor)
         
         btnSignin.layer.cornerRadius = btnSignin.frame.height / 2
+        btnForgotPassword.setTitleColor(primaryColor, for: .normal)
         scaleUISupportAllDevices()
     }
     

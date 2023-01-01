@@ -7,7 +7,7 @@
 
 import UIKit
 
-public struct MainView {
+public struct MainConfig {
     public var backgroundColor:UIColor?
     public var alpha:Float?
     public var image:UIImage?
@@ -30,7 +30,7 @@ public struct IconConfig {
 }
 
 public struct TextfieldConfig {
-    public var textSize:Float?
+    public var font:UIFont?
     public var textColor:UIColor?
 }
 
@@ -63,16 +63,18 @@ public class AdvancedLayout:SigninLayout {
     public var iconPassword = IconConfig()
     public var lineUsername = LineConfig()
     public var linePassword = LineConfig()
-    public var button = ButtonConfig()
+    public var buttonSignin = ButtonConfig()
+    public var buttonForgot = ButtonConfig()
     public var imgLogo = LogoConfig()
-    public var mainView = MainView()
+    public var mainView = MainConfig()
+    public var textSignin = TextConfig()
     
     public init() {}
 }
 
 public class SimpleLayout:SigninLayout {
     public var primaryColor:UIColor?
-    public var bgColor:UIColor?
+    public var backgroundColor:UIColor?
     
     public var backgroundImage:UIImage?
     public var logoImage:UIImage?

@@ -17,11 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
+        // Sample Custom SimpleLayout
         let simpleLayout = SimpleLayout()
-        simpleLayout.primaryColor = UIColor.blue.withAlphaComponent(0.8)
-        simpleLayout.bgColor = UIColor(red: 227/255.0, green: 171/255.0, blue: 180/255.0, alpha: 1.0)
+        simpleLayout.primaryColor = UIColor(red: 56/255.0, green: 112/255.0, blue: 58/255.0, alpha: 1.0)
+        
+        // Sample Custom AdvancedLayout
+        let advancedLayout = AdvancedLayout()
+        advancedLayout.linePassword.color = .green
+        advancedLayout.lineUsername.color = .green
+        advancedLayout.tfUsername.textColor = .blue
+        advancedLayout.tfPassword.textColor = .blue
+        advancedLayout.buttonForgot.fontColor = .blue
+        
         let signinViewController = SigninViewController()
-        signinViewController.layout = .Simple(layout: simpleLayout)
+        //signinViewController.layout = .Simple(layout: simpleLayout)
+        signinViewController.layout = .Advanced(layout: advancedLayout)
         
         window?.rootViewController = signinViewController
         window?.makeKeyAndVisible()
