@@ -10,6 +10,7 @@ Create a reusable log in framework:
 - Programming language: Swift 
 - Design app's architecture: MVP Pattern
 - Protocol-Oriented Programming
+- Dependency Injection
 - Unit test: Test-Driven Development
 - Customize UI: SimpleLayout & AdvancedLayout
 - Support layout for all devices iPhone & iPad
