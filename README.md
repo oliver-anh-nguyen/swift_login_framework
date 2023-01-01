@@ -17,6 +17,8 @@ Create a reusable log in framework:
 - Observe Keyboard when user input
 - Validator data input
 - Error handling
+- Continuous Integration: Github Actions <br />
+[![iOS starter workflow](https://github.com/oliver-anh-nguyen/swift_clean_mvvm_base/actions/workflows/ios.yml/badge.svg)](https://github.com/oliver-anh-nguyen/swift_clean_mvvm_base/actions/workflows/ios.yml)
 
 ## Installation
 
