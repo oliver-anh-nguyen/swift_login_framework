@@ -34,6 +34,12 @@ To compile/run the Demo iOS application using Framework:
 - Select the LoginDemo scheme
 - Run by pressing Play or by pressing [Cmd + R]
 
+To use Swift Package Manager
+```swift
+https://github.com/oliver-anh-nguyen/swift_package_login_framework
+```
+
+
 ## Usage example
 
 1. Import the LoginFramework in your AppDelegate
