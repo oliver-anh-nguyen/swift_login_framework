@@ -1,0 +1,82 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target arm64-apple-ios15.4-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LoginFramework
+import Foundation
+@_exported import LoginFramework
+import Swift
+import UIKit
+import _Concurrency
+public struct MainConfig {
+  public var backgroundColor: UIKit.UIColor?
+  public var alpha: Swift.Float?
+  public var image: UIKit.UIImage?
+}
+public struct LogoConfig {
+  public var backgroundColor: UIKit.UIColor?
+  public var alpha: Swift.Float?
+  public var image: UIKit.UIImage?
+}
+public struct TextConfig {
+  public var textSize: Swift.Float?
+  public var font: UIKit.UIFont?
+  public var fontColor: UIKit.UIColor?
+}
+public struct IconConfig {
+  public var image: UIKit.UIImage?
+}
+public struct TextfieldConfig {
+  public var font: UIKit.UIFont?
+  public var textColor: UIKit.UIColor?
+}
+public struct LineConfig {
+  public var color: UIKit.UIColor?
+  public var alpha: Swift.Float?
+}
+public struct ButtonConfig {
+  public var backgroundColor: UIKit.UIColor?
+  public var font: UIKit.UIFont?
+  public var alpha: Swift.Float?
+  public var fontColor: UIKit.UIColor?
+  public var cornerRadius: Swift.Float?
+}
+public enum Layout {
+  case Simple(layout: LoginFramework.SimpleLayout)
+  case Advanced(layout: LoginFramework.AdvancedLayout)
+}
+public protocol SigninLayout {
+}
+public class AdvancedLayout : LoginFramework.SigninLayout {
+  public var tfUsername: LoginFramework.TextfieldConfig
+  public var tfPassword: LoginFramework.TextfieldConfig
+  public var iconUsername: LoginFramework.IconConfig
+  public var iconPassword: LoginFramework.IconConfig
+  public var lineUsername: LoginFramework.LineConfig
+  public var linePassword: LoginFramework.LineConfig
+  public var buttonSignin: LoginFramework.ButtonConfig
+  public var buttonForgot: LoginFramework.ButtonConfig
+  public var imgLogo: LoginFramework.LogoConfig
+  public var mainView: LoginFramework.MainConfig
+  public var textSignin: LoginFramework.TextConfig
+  public init()
+  @objc deinit
+}
+public class SimpleLayout : LoginFramework.SigninLayout {
+  public var primaryColor: UIKit.UIColor?
+  public var backgroundColor: UIKit.UIColor?
+  public var backgroundImage: UIKit.UIImage?
+  public var logoImage: UIKit.UIImage?
+  public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class SigninViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public var layout: LoginFramework.Layout?
+  @objc convenience dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension LoginFramework.SigninViewController : UIKit.UITextFieldDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+}
