@@ -18,6 +18,7 @@ Create a reusable log in framework:
 - Observe Keyboard when user input
 - Validator data input
 - Error handling
+- Build Swift Package as XCFramework
 - Continuous Integration: Github Actions <br />
 [![iOS starter workflow](https://github.com/oliver-anh-nguyen/swift_clean_mvvm_base/actions/workflows/ios.yml/badge.svg)](https://github.com/oliver-anh-nguyen/swift_clean_mvvm_base/actions/workflows/ios.yml)
 
@@ -47,14 +48,20 @@ https://github.com/oliver-anh-nguyen/swift_package_login_framework
 import LoginFramework
 ```
 2. In didFinishLaunchingWithOptions in your AppDelegate
-- To show default UI Signin
+- To show default Layout Signin
 ```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    self.window = UIWindow(frame: UIScreen.main.bounds)
-    let signinViewController = SigninViewController()
-    window?.rootViewController = signinViewController
-    window?.makeKeyAndVisible()
-    return true
+import UIKit
+import LoginFramework
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let signinViewController = SigninViewController()
+        window?.rootViewController = signinViewController
+        window?.makeKeyAndVisible()
+        return true
+    }
 }
 ```
 - To customize layout, we have two types of layout configuration: SimpleLayout & AdvancedLayout
