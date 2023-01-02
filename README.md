@@ -40,7 +40,6 @@ To use Swift Package Manager
 https://github.com/oliver-anh-nguyen/swift_package_login_framework
 ```
 
-
 ## Usage example
 
 1. Import the LoginFramework in your AppDelegate
@@ -96,3 +95,39 @@ Default UI             |  Customize Simple Layout   |  Layout Input
 
 - Unit testing Model, Presenter & Service <br />
 <img src="Screenshots/sc1.png"/>
+
+## Build Framework Archives for XCFramework 
+1. Open Terminal & cd to folder LoginFramework
+2. Copy script below and paste to Terminal, then Enter
+```swift
+xcodebuild archive \
+-scheme LoginFramework \
+-configuration Release \
+-destination 'generic/platform=iOS' \
+-archivePath './build/LoginFramework.framework-iphoneos.xcarchive' \
+SKIP_INSTALL=NO \
+BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+xcodebuild archive \
+-scheme LoginFramework \
+-configuration Release \
+-destination 'generic/platform=iOS Simulator' \
+-archivePath './build/LoginFramework.framework-iphonesimulator.xcarchive' \
+SKIP_INSTALL=NO \
+BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+xcodebuild archive \
+-scheme LoginFramework \
+-configuration Release \
+-destination 'platform=macOS,arch=x86_64,variant=Mac Catalyst' \
+-archivePath './build/LoginFramework.framework-catalyst.xcarchive' \
+SKIP_INSTALL=NO \
+BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+xcodebuild -create-xcframework \
+-framework './build/LoginFramework.framework-iphonesimulator.xcarchive/Products/Library/Frameworks/LoginFramework.framework' \
+-framework './build/LoginFramework.framework-iphoneos.xcarchive/Products/Library/Frameworks/LoginFramework.framework' \
+-framework './build/LoginFramework.framework-catalyst.xcarchive/Products/Library/Frameworks/LoginFramework.framework' \
+-output './build/LoginFramework.xcframework'
+```
+3. It will generate to three xcarchive and folder xcframework in build folder. Sample
+```swift
+https://github.com/oliver-anh-nguyen/swift_login_framework/tree/main/build
+```
