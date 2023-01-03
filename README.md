@@ -19,6 +19,7 @@ Create a reusable log in framework:
 - Validator data input
 - Error handling
 - Build Swift Package as XCFramework
+- Publishing LoginFrameworkPods using Cocoapods
 - Continuous Integration: Github Actions <br />
 [![iOS starter workflow](https://github.com/oliver-anh-nguyen/swift_clean_mvvm_base/actions/workflows/ios.yml/badge.svg)](https://github.com/oliver-anh-nguyen/swift_clean_mvvm_base/actions/workflows/ios.yml)
 
@@ -38,6 +39,11 @@ To compile/run the Demo iOS application using Framework:
 To use Swift Package Manager
 ```swift
 https://github.com/oliver-anh-nguyen/swift_package_login_framework
+```
+To use CocoaPods, add the following line to your Podfile:
+
+```swift
+pod 'LoginFrameworkPods'
 ```
 
 ## Usage example
