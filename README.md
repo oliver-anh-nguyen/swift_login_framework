@@ -8,7 +8,7 @@ Create a reusable log in framework:
 
 ## Features
 - Programming language: Swift 
-- Design app's architecture: MVP Pattern
+- MVP Pattern
 - Protocol-Oriented Programming
 - Dependency Injection
 - Unit test: Test-Driven Development
@@ -20,7 +20,7 @@ Create a reusable log in framework:
 - Error handling
 - Build Swift Package as XCFramework
 - Publishing LoginFrameworkPods using Cocoapods
-- Continuous Integration: Github Actions <br />
+- Continuous Integration: Github Actions <br /> <br />
 [![iOS starter workflow](https://github.com/oliver-anh-nguyen/swift_clean_mvvm_base/actions/workflows/ios.yml/badge.svg)](https://github.com/oliver-anh-nguyen/swift_clean_mvvm_base/actions/workflows/ios.yml)
 
 ## Installation
@@ -93,7 +93,6 @@ signinViewController.layout = .Advanced(layout: advancedLayout)
 ```
 
 ## Screenshots
-- Layout Signin <br />
 
 Default UI             |  Customize Simple Layout   |  Layout Input
 :-------------------------:|:-------------------------:|:-------------------------:
