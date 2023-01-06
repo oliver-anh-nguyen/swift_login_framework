@@ -7,6 +7,7 @@
 
 import UIKit
 import LoginFramework
+import SwiftUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,6 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let signinViewController = SigninViewController()
         //signinViewController.layout = .Simple(layout: simpleLayout)
         //signinViewController.layout = .Advanced(layout: advancedLayout)
+        
+        // Sample load SwiftUI
+        //let signinViewController = UIHostingController(rootView: SigninViewControllerSwiftUI())
         
         window?.rootViewController = signinViewController
         window?.makeKeyAndVisible()

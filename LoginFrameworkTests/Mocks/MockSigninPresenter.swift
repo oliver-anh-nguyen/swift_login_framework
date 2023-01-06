@@ -14,7 +14,7 @@ class MockSigninPresenter: SigninPresenterProtocol {
     
     required init(formModelValidator: SigninModelValidatorProtocol,
                   webservice: SigninWebServiceProtocol,
-                  delegate: SigninViewDelegate) {
+                  delegate: SigninViewDelegate?) {
         
     }
     

@@ -10,7 +10,7 @@ import Foundation
 protocol SigninPresenterProtocol: AnyObject {
     init(formModelValidator: SigninModelValidatorProtocol,
          webservice: SigninWebServiceProtocol,
-         delegate: SigninViewDelegate)
+         delegate: SigninViewDelegate?)
     
     func processUserSignin(formModel: SigninFormModel)
 }

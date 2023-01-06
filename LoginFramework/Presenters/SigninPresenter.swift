@@ -15,7 +15,7 @@ final class SigninPresenter: SigninPresenterProtocol {
     
     required init(formModelValidator: SigninModelValidatorProtocol,
                   webservice: SigninWebServiceProtocol,
-                  delegate: SigninViewDelegate) {
+                  delegate: SigninViewDelegate?) {
         self.modelValidator = formModelValidator
         self.webService = webservice
         self.delegate = delegate
